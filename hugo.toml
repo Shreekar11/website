@@ -35,6 +35,11 @@ description = "This website is a record of my work, projects, musings, and resea
 enabled = false
 
 # Social icons
+
+[[params.social]]
+name = "x"
+url = "https://x.com/Shreekar_11"
+
 [[params.social]]
 name = "github"
 url = "https://github.com/Shreekar11"
