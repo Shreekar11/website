@@ -1,19 +1,68 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
-defaultContentLanguage = 'en-us'
-title = 'typo'
+title = 'Shreekar Gade'
 
-[module]
-[module.hugoVersion]
-extended = false
-min = "0.116.0"
+# Disable tags, actually, they are rendered as a list, but the
+# idea is to disable them.
+disableKinds = ["taxonomy"]
 
-# Default config
+# Google analytics code
+#
+googleAnalytics = "G-xxxxxxxxxx"
+
+[params]
+# Math mode
+math = true
+theme = "light"
+
+# Intro on main page, content in markdown, if you omit title or content the other can be displayed
+homeIntro = true
+homeIntroTitle = 'Hello'
+homeIntroContent = "I'm a software engineer, specialized in building and maintaining scalable backend and distributed systems, workflow orchestration, production infra and AI systems.\n\nPreviously, I had engineered at [Atlan](https://atlan.com) and [Attack Capital (YC W22)](https://attack.capital)\n\nI love to write and read technical blogs, research papers and play basketball in my free time.\n\nI’ve written a longer introduction [here](/about) if you’re interested :)"
+
+# Collection to display on home page:
+# in this case we would display content/posts
+homeCollectionTitle = "Posts"
+homeCollection = "posts"
+
+# Pagination size across all website, this is the same for homepage and single list page
+paginationSize = 100
+
+description = "This website is a record of my work, projects, musings, and research."
+
+# Breadcrumbs
 [params.breadcrumbs]
-enabled = true
-showCurrentPage = true
-home = "Home"
+enabled = false
 
+# Social icons
+[[params.social]]
+name = "github"
+url = "https://github.com/Shreekar11"
+
+[[params.social]]
+name = "linkedin"
+url = "https://www.linkedin.com/in/shreekar-gade"
+
+# Main menu pages
+[[params.menu]]
+name = "home"
+url = "/"
+
+[[params.menu]]
+name = "posts"
+url = "/posts"
+
+[[params.menu]]
+name = "projects"
+url = "/projects"
+
+[[params.menu]]
+name = "about"
+url = "/about"
+
+# Syntax highlight on code blocks,
+# https://xyproto.github.io/splash/docs/all.html
+# I suggest algol
 [markup]
 [markup.highlight]
-noClasses = false
+style = 'abap'

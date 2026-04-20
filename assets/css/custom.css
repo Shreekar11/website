@@ -1,1 +1,102 @@
 /* Place custom css here */
+
+/* Sigil styles for AI page */
+.sigil {
+  font-family: var(--font-body);
+  max-width: 100%;
+  margin: 2rem 0;
+}
+
+.sigil-divider {
+  font-weight: bold;
+  margin-bottom: 1rem;
+  font-size: 1.2em;
+}
+
+.sigil-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sigil-muted {
+  color: var(--content-secondary);
+  font-size: 0.9em;
+}
+
+.sigil-stats {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.sigil-stats span {
+  font-weight: bold;
+}
+
+.sigil-bar-section {
+  margin: 1rem 0;
+}
+
+.sigil-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.sigil-bar-label {
+  min-width: 6ch;
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+.sigil-bar-track {
+  flex: 1;
+  height: 10px;
+  background: #e0e0e0;
+}
+
+.sigil-bar-fill {
+  height: 10px;
+  background: #222;
+}
+
+.sigil-bar-pct {
+  color: var(--content-secondary);
+  min-width: 4ch;
+  text-align: center;
+}
+
+/* Numbers: key left, value right */
+.sigil-numbers {
+  margin: 0.5rem 0;
+}
+
+.sigil-num-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.sigil-num-row span {
+  color: var(--content-secondary);
+}
+
+/* Observations */
+.sigil-obs {
+  margin: 0.5rem 0;
+}
+
+.sigil-obs p {
+  font-family: var(--font-mono);
+  font-size: 0.95em;
+  margin: 0.3rem 0;
+  line-height: 1.6;
+}
+
+.sigil-footer {
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+}

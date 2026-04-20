@@ -12,9 +12,11 @@
   --header-menu-top-gap: 1rem;
 
   /* Typography */
+  --font-heading:
+    "Iowan Old Style", Inter, Georgia, Cambria, "Noto Serif", "Droif Serif", ui-serif, serif;
   --font-body:
-    "Literata", Georgia, Cambria, "Noto Serif", "Droif Serif", ui-serif, serif;
-  --font-mono: "Monaspace", ui-monospace, monospace;
+    "Iowan Old Style", Inter, Georgia, Cambria, "Noto Serif", "Droif Serif", ui-serif, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
   --h1-margin-top: 2rem;
   --h1-margin-bottom: 1.5rem;
