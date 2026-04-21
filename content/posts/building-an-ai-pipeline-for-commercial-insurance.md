@@ -41,6 +41,8 @@ Two months in, I had a much better understanding of why this problem is harder t
 
 I started without deep insurance domain knowledge. I built up what I needed by reading about commercial policies, looking at real forms, and, more than anything, debugging extraction failures and asking why.
 
+For reference, here's an example commercial policy document you can examine: [Business Auto Coverage Form](https://sonomacounty.gov/Main%20County%20Site/General/Sonoma/Sample%20Dept/Sample%20Dept/Divisions%20and%20Sections/Liability/Services/Help%20Request/Subpages/Help%20Request/_Documents/BusinessAutoCoverageForm_CA_00_01.pdf)
+
 Here is what I think matters for building an extraction system.
 
 ### The Five Sections of a Commercial Policy
@@ -450,4 +452,4 @@ What I built is a capable document processing pipeline. What I'm less certain ab
 
 
 
-*Source code for Insura-AI is available on [GitHub](https://github.com/Shreekar11/insura-ai). Built with FastAPI, Temporal, Typescript, Next.js, PostgreSQL/pgvector, Neo4j, Docling, and Sentence Transformers.*
+*Source code for Insura-AI is available on [GitHub](https://github.com/Shreekar11/insura-ai). Here's a [Loom video](https://www.loom.com/share/1bde33ce22e5469ab4e11f02345a49ac) - take a look if this excited you. Built with FastAPI, Temporal, Typescript, Next.js, PostgreSQL/pgvector, Neo4j, Docling, and Sentence Transformers.*
