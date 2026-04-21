@@ -18,7 +18,7 @@ theme = "light"
 # Intro on main page, content in markdown, if you omit title or content the other can be displayed
 homeIntro = true
 homeIntroTitle = 'Hello'
-homeIntroContent = "I'm a software engineer, specialized in building and maintaining scalable backend and distributed systems, workflow orchestration, production infra and AI systems.\n\nPreviously, I had engineered at [Atlan](https://atlan.com) and [Attack Capital (YC W22)](https://attack.capital)\n\nI love to write and read technical blogs, research papers and play basketball in my free time.\n\nI’ve written a longer introduction [here](/about) if you’re interested :)"
+homeIntroContent = "I'm a software engineer, specialized in building and maintaining scalable backend and distributed systems, workflow orchestration, production infra and AI systems.\n\nPreviously, I worked as an engineer at [Atlan](https://atlan.com) and [Attack Capital (YC W22)](https://attack.capital)\n\nI love to write and read technical blogs, research papers and play basketball in my free time.\n\nI’ve written a longer introduction [here](/about) if you’re interested :)"
 
 # Collection to display on home page:
 # in this case we would display content/posts
