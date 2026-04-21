@@ -57,6 +57,9 @@ url = "/"
 name = "about"
 url = "/about"
 
+[[params.menu]]
+name = "work"
+url = "/work"
 
 [[params.menu]]
 name = "posts"
