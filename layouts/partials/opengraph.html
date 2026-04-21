@@ -4,16 +4,35 @@
 
 <meta property="og:url" content="{{ .Permalink }}">
 
+{{- $title := "" -}}
+{{- if .IsHome -}}
+  {{- $title = site.Title -}}
+{{- else -}}
+  {{- $title = or .Title site.Title site.Params.title -}}
+{{- end -}}
+
+{{- $descriptionSource := "" -}}
+{{- if .IsHome -}}
+  {{- $descriptionSource = site.Params.Description -}}
+{{- else -}}
+  {{- $descriptionSource = or .Params.description .Description .Params.summary .Summary -}}
+  {{- $descriptionSource = trim ($descriptionSource | plainify | htmlUnescape | replaceRE "\\s+" " ") "\n\r\t " -}}
+  {{- if eq $descriptionSource "" -}}
+    {{- $descriptionSource = trim (.Plain | plainify | htmlUnescape | replaceRE "\\s+" " ") "\n\r\t " -}}
+  {{- end -}}
+{{- end -}}
+{{- $description := $descriptionSource | truncate 200 -}}
+
 {{- with or site.Title site.Params.title | plainify }}
   <meta property="og:site_name" content="{{ . }}">
 {{- end }}
 
 {{- /* Source modified to remove pipe to `plainify` */ -}}
-{{- with or .Title site.Title site.Params.title }}
+{{- with $title }}
   <meta property="og:title" content="{{ . }}">
 {{- end }}
 
-{{- with or .Description .Summary site.Params.description | plainify | htmlUnescape }}
+{{- with $description }}
   <meta property="og:description" content="{{ trim . "\n\r\t " }}">
 {{- end }}
 
@@ -58,10 +77,29 @@
       {{- $ogImageStr := printf "%s" . }}
       {{- with $ogImageStr }}
         <meta property="og:image" content="{{ . }}">
+        <meta property="og:image:secure_url" content="{{ . }}">
       {{- end }}
     {{- end }}
   {{- end }}
   
+{{- end }}
+
+{{- with partial "head/og-image.html" . }}
+  {{- $ogImageStr := printf "%s" . }}
+  {{- with $ogImageStr }}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="{{ . }}">
+  {{- end }}
+{{- else }}
+  <meta name="twitter:card" content="summary">
+{{- end }}
+
+{{- with $title }}
+  <meta name="twitter:title" content="{{ . }}">
+{{- end }}
+
+{{- with $description }}
+  <meta name="twitter:description" content="{{ trim . "\n\r\t " }}">
 {{- end }}
 
 {{- with .Params.audio }}

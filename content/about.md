@@ -1,5 +1,6 @@
 ---
 title: "About"
+description: "About Shreekar Gade, a software engineer in Pune building distributed systems, backend infrastructure, and production-ready AI systems."
 ---
 
 👋🏻 Hi, I’m Shreekar.

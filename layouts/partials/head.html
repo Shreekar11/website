@@ -16,11 +16,18 @@
 {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
 {{ end }}
 
+{{- $descriptionSource := "" -}}
 {{- if .IsHome -}}
-<meta name="description" content="{{ site.Params.Description }}"/>
+  {{- $descriptionSource = site.Params.Description -}}
 {{- else -}}
-<meta name="description" content="{{ .Params.Description }}"/>
-{{- end }}
+  {{- $descriptionSource = or .Params.description .Description .Params.summary .Summary -}}
+  {{- $descriptionSource = trim ($descriptionSource | plainify | htmlUnescape | replaceRE "\\s+" " ") "\n\r\t " -}}
+  {{- if eq $descriptionSource "" -}}
+    {{- $descriptionSource = trim (.Plain | plainify | htmlUnescape | replaceRE "\\s+" " ") "\n\r\t " -}}
+  {{- end -}}
+{{- end -}}
+{{- $description := $descriptionSource | truncate 160 -}}
+<meta name="description" content="{{ $description }}">
 
 {{ if .Param "fediverse" }}
 <meta name="fediverse:creator" content="{{ .Params.Fediverse }}">

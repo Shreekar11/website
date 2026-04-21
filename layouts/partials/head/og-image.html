@@ -1,38 +1,51 @@
-{{- if .IsHome -}}
-  {{- /* Homepage: Use default og-image or banner */ -}}
-  {{- with resources.GetMatch "images/og-image.{webp,png,jpg}" -}}
-    {{- .RelPermalink -}}
+{{- $defaultImage := "" -}}
+{{- with resources.Get "images/og-image.png" -}}
+  {{- $defaultImage = .Permalink -}}
+{{- end -}}
+
+{{- if eq $defaultImage "" -}}
+  {{- with resources.Get "images/og-image.webp" -}}
+    {{- $defaultImage = .Permalink -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if eq $defaultImage "" -}}
+  {{- with resources.Get "images/og-image.jpg" -}}
+    {{- $defaultImage = .Permalink -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if and (eq $defaultImage "") (fileExists "static/og-image.png") -}}
+  {{- $defaultImage = "og-image.png" | absURL -}}
+{{- end -}}
+
+{{- if and (eq $defaultImage "") (fileExists "static/og-image.webp") -}}
+  {{- $defaultImage = "og-image.webp" | absURL -}}
+{{- end -}}
+
+{{- if and (eq $defaultImage "") (fileExists "static/og-image.jpg") -}}
+  {{- $defaultImage = "og-image.jpg" | absURL -}}
+{{- end -}}
+
+{{- if eq $defaultImage "" -}}
+  {{- if site.Params.theme | default "light" | eq "dark" -}}
+    {{- if fileExists "static/banner-dark.webp" -}}
+      {{- $defaultImage = "banner-dark.webp" | absURL -}}
+    {{- end -}}
   {{- else -}}
-    {{- if site.Params.theme | default "light" | eq "dark" -}}
-      {{- if fileExists "images/banner-dark.webp" -}}
-        {{- "images/banner-dark.webp" | absURL -}}
-      {{- end -}}
-    {{- else -}}
-      {{- if fileExists "images/banner-light.webp" -}}
-        {{- "images/banner-light.webp" | absURL -}}
-      {{- end -}}
+    {{- if fileExists "static/banner-light.webp" -}}
+      {{- $defaultImage = "banner-light.webp" | absURL -}}
     {{- end -}}
   {{- end -}}
-{{- else if .IsPage -}}
-  {{- /* Single page/post: Try featured_image from frontmatter first */ -}}
-  {{- if .Params.featured_image -}}
-    {{- .Params.featured_image | absURL -}}
-  {{- else if .Params.image -}}
-    {{- .Params.image | absURL -}}
-  {{- else -}}
-    {{- /* No post-specific image, fall back to default og-image or banner */ -}}
-    {{- with resources.GetMatch "images/og-image.{webp,png,jpg}" -}}
-      {{- .RelPermalink -}}
-    {{- else -}}
-      {{- if site.Params.theme | default "light" | eq "dark" -}}
-        {{- if fileExists "images/banner-dark.webp" -}}
-          {{- "images/banner-dark.webp" | absURL -}}
-        {{- end -}}
-      {{- else -}}
-        {{- if fileExists "images/banner-light.webp" -}}
-          {{- "images/banner-light.webp" | absURL -}}
-        {{- end -}}
-      {{- end -}}
-    {{- end -}}
-  {{- end -}}
+{{- end -}}
+
+{{- $selectedImage := $defaultImage -}}
+{{- if .Params.featured_image -}}
+  {{- $selectedImage = .Params.featured_image | absURL -}}
+{{- else if .Params.image -}}
+  {{- $selectedImage = .Params.image | absURL -}}
+{{- end -}}
+
+{{- with $selectedImage -}}
+  {{- . -}}
 {{- end -}}

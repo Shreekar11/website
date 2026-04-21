@@ -1,5 +1,6 @@
 ---
 title: "Projects"
+description: "A selection of software, AI, and distributed systems projects built by Shreekar Gade across backend, automation, web, and infrastructure."
 toc: false
 readTime: false
 math: false
