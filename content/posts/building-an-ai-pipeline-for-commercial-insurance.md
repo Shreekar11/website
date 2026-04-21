@@ -1,6 +1,7 @@
 ---
 title: "Building an AI Pipeline for Commercial Insurance"
 date: "2026-04-21"
+featured_image: "/images/posts/ai-pipeline-for-commercial-insurance.webp"
 summary: "A deep dive into building an AI system to extract and understand commercial insurance policies as knowledge graphs, covering the domain constraints, pipeline architecture, and lessons learned."
 description: "This post explores the challenges and solutions in processing commercial insurance documents using AI, from OCR and chunking to entity resolution and graph indexing, with insights into why policies are inherently graph-structuredessing commercial insurance documents using AI, from OCR and chunking to entity resolution and graph indexing, with insights into why policies are inherently graph-structured."
 toc: false
