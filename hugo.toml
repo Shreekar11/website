@@ -54,16 +54,17 @@ name = "home"
 url = "/"
 
 [[params.menu]]
+name = "about"
+url = "/about"
+
+
+[[params.menu]]
 name = "posts"
 url = "/posts"
 
 [[params.menu]]
 name = "projects"
 url = "/projects"
-
-[[params.menu]]
-name = "about"
-url = "/about"
 
 # Syntax highlight on code blocks,
 # https://xyproto.github.io/splash/docs/all.html
