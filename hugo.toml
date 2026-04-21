@@ -22,8 +22,8 @@ homeIntroContent = "I'm a software engineer, specialized in building and maintai
 
 # Collection to display on home page:
 # in this case we would display content/posts
-# homeCollectionTitle = "Posts"
-# homeCollection = "posts"
+homeCollectionTitle = "Posts"
+homeCollection = "posts"
 
 # Pagination size across all website, this is the same for homepage and single list page
 paginationSize = 100
