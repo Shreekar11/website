@@ -14,29 +14,13 @@
     {{- end -}}
   {{- end -}}
 {{- else if .IsPage -}}
-  {{- /* Single page/post: Check for featured_image in frontmatter first */ -}}
-  {{- $hasImage := false }}
-  {{- with .Params.featured_image -}}
-    {{- if eq (substr . 0 4) "http" -}}
-      {{- . -}}
-    {{- else -}}
-      {{- . | absURL -}}
-    {{- end -}}
-    {{- $hasImage = true }}
-  {{- end -}}
-  {{- if not $hasImage -}}
-    {{- /* Try image parameter as fallback */ -}}
-    {{- with .Params.image -}}
-      {{- if eq (substr . 0 4) "http" -}}
-        {{- . -}}
-      {{- else -}}
-        {{- . | absURL -}}
-      {{- end -}}
-      {{- $hasImage = true }}
-    {{- end -}}
-  {{- end -}}
-  {{- if not $hasImage -}}
-    {{- /* No image in frontmatter, fall back to default og-image or banner */ -}}
+  {{- /* Single page/post: Try featured_image from frontmatter first */ -}}
+  {{- if .Params.featured_image -}}
+    {{- .Params.featured_image | absURL -}}
+  {{- else if .Params.image -}}
+    {{- .Params.image | absURL -}}
+  {{- else -}}
+    {{- /* No post-specific image, fall back to default og-image or banner */ -}}
     {{- with resources.GetMatch "images/og-image.{webp,png,jpg}" -}}
       {{- .RelPermalink -}}
     {{- else -}}
