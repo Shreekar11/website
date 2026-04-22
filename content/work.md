@@ -1,4 +1,5 @@
 ---
+hidePagination: true
 title: "Work Experience"
 description: "Shreekar Gade's professional experience building distributed systems and AI products at Atlan and Attack Capital (YC W22)."
 toc: false
