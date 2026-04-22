@@ -24,4 +24,5 @@ Led 0 → 1 development of [joinarena.ai](http://joinarena.ai/) — an AI-native
 
 ---
 
-See my full work history and detailed achievements on [LinkedIn](https://www.linkedin.com/in/shreekar-gade/).
+See my full work history on [LinkedIn](https://www.linkedin.com/in/shreekar-gade/), also here my resume [here](https://drive.google.com/file/d/16n3WsGUmwdGKL1Cb_xNw2IxWi1FgTWmv/view?usp=drive_link).
+
