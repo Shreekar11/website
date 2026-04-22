@@ -5,7 +5,7 @@ description: "About Shreekar Gade, a software engineer in Pune building distribu
 
 👋🏻 Hi, I’m Shreekar.
 
-I'm a software engineer based in Pune, building distributed systems and AI systems that are reliable, resilient, and production-ready.
+I'm a software engineer, building distributed systems and AI systems that are reliable, resilient, and production-ready.
 
 I’m particularly interested in workflow + agents orchestration (Temporal), event-driven architectures, and designing systems that don’t break under real-world constraints.
 
